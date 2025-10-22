@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(to bottom, #4CAF50, #F44336);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.date-display {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.fraction-display {
+    text-align: center;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.fraction {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.fraction-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 18px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary action buttons - much larger */
+.btn-green, .btn-red {
+    padding: 35px 20px;
+    font-size: 2rem;
+    border-radius: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced hover effects for primary buttons */
+.btn-green:hover, .btn-red:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-green {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.btn-red {
+    background: linear-gradient(135deg, #F44336, #d32f2f);
+    color: white;
+}
+
+.btn-undo {
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    color: white;
+}
+
+.btn-undo:disabled {
+    background: linear-gradient(135deg, #666, #555);
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-undo:disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    color: white;
+}
+
+.stats {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.stat-item:last-child {
+    margin-bottom: 0;
+}
+
+.stat-label {
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.log-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    flex: 1;
+}
+
+.log-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.log-entries {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.log-entry {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    border-left: 4px solid #4CAF50;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.log-entry:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.log-entry.missed {
+    border-left-color: #F44336;
+}
+
+.log-entry.excellent {
+    border-left-color: #FFD700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.log-entry.poor {
+    border-left-color: #FF5722;
+    background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.log-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.log-fraction {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.log-performance {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .fraction {
+        font-size: 3.5rem;
+    }
+    
+    /* Even larger primary buttons on mobile */
+    .btn-green, .btn-red {
+        padding: 40px 20px;
+        font-size: 2.2rem;
+        min-height: 90px;
+        border-radius: 25px;
+    }
+    
+    .btn {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+    }
+    
+    .stat-item {
+        font-size: 1rem;
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
+    }
+}
+
+/* Scrollbar styling */
+.log-entries::-webkit-scrollbar {
+    width: 6px;
+}
+
+.log-entries::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.log-entries::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.log-entries::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

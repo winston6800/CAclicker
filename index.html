@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Opportunity Tracker</h1>
+            <div class="date-display" id="currentDate"></div>
+        </div>
+        
+        <div class="fraction-display">
+            <div class="fraction" id="fractionDisplay">0/0</div>
+            <div class="fraction-label">Opportunities Taken / Total</div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-green" id="addTaken">+ Taken</button>
+            <button class="btn btn-red" id="addMissed">+ Missed</button>
+            <button class="btn btn-undo" id="undoLast" disabled>↶ Undo (3/3)</button>
+            <button class="btn btn-reset" id="resetDay">Reset Day</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Today's Score:</span>
+                <span class="stat-value" id="todayScore">0%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Total Opportunities:</span>
+                <span class="stat-value" id="totalOpportunities">0</span>
+            </div>
+        </div>
+        
+        <div class="log-section">
+            <h3>Daily Log</h3>
+            <div class="log-entries" id="logEntries"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
