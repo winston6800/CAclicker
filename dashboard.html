@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Tracker - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Dashboard</h1>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="window.location.href='index.html'">📱 Tracker</button>
+                <button class="nav-btn active">📊 Dashboard</button>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="overallScore">0%</div>
+                    <div class="stat-label">Overall Score</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="currentStreak">0</div>
+                    <div class="stat-label">Current Streak</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="totalDays">0</div>
+                    <div class="stat-label">Days Tracked</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="bestStreak">0</div>
+                    <div class="stat-label">Best Streak</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <h3>📈 Performance Trend</h3>
+            <div class="chart-container" id="chartContainer">
+                <div class="chart-placeholder">No data yet - start tracking opportunities!</div>
+            </div>
+        </div>
+        
+        <div class="log-section">
+            <h3>📋 Daily Log</h3>
+            <div class="log-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="excellent">🌟 Excellent</button>
+                <button class="filter-btn" data-filter="good">👍 Good</button>
+                <button class="filter-btn" data-filter="poor">⚠️ Poor</button>
+            </div>
+            <div class="log-entries" id="logEntries"></div>
+        </div>
+        
+        <div class="insights-section">
+            <h3>💡 Insights</h3>
+            <div class="insights" id="insights"></div>
+        </div>
+    </div>
+    
+    <script src="data-manager.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

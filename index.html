@@ -10,6 +10,10 @@
     <div class="container">
         <div class="header">
             <h1>Opportunity Tracker</h1>
+            <div class="nav-buttons">
+                <button class="nav-btn active">📱 Tracker</button>
+                <button class="nav-btn" onclick="window.location.href='dashboard.html'">📊 Dashboard</button>
+            </div>
             <div class="date-display" id="currentDate"></div>
         </div>
         
@@ -36,12 +40,9 @@
             </div>
         </div>
         
-        <div class="log-section">
-            <h3>Daily Log</h3>
-            <div class="log-entries" id="logEntries"></div>
-        </div>
     </div>
     
+    <script src="data-manager.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
